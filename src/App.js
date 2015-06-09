@@ -11,7 +11,7 @@ export default React.createClass({
   componentWillMount: function() {
     var metaBinding = this.getDefaultBinding().meta();
 
-    Router.run(Routes, (Handler, state) => {
+    Router.run(Routes, Router.HistoryLocation, (Handler, state) => {
       this.Handler = Handler;
       metaBinding.set('currentPath', state.path);
     });
